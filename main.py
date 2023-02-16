@@ -11,9 +11,9 @@ def cpu_temp():
 
 def check_temp():
 	cpu = cpu_temp()
-	if (float(cpu) > 49) and not GPIO.input(18):
+	if (float(cpu) > 70) and not GPIO.input(18):
 		GPIO.output(18, True)
-	elif float(cpu) <= 42  and GPIO.input(18):
+	elif float(cpu) <= 60  and GPIO.input(18):
 		GPIO.output(18, False)
 
 GPIO.setwarnings(False)
